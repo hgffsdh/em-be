@@ -1,0 +1,72 @@
+/* Nền gradient lung linh */
+body {
+    background: linear-gradient(to bottom, #ff758c, #ff7eb3);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Container chính */
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Hiệu ứng xuất hiện */
+h1, p {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ảnh bay mềm mại */
+.love-images img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    animation: floatUp 10s infinite ease-in-out;
+    opacity: 0.9;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+    50% { transform: translateY(50vh) scale(1); opacity: 0.9; }
+    100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+/* Trái tim bay */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 30px;
+    animation: heartFloat 6s infinite ease-in-out;
+}
+
+@keyframes heartFloat {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* Hiệu ứng lấp lánh */
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('sparkles.gif') repeat;
+    opacity: 0.5;
+}
